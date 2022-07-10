@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9055c45e2ae744759476381d157634b9" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="HOTELMANAGEMENTModel.CHITIETPHIEUTHUE" Width="1.5" PointX="7.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENTModel.EMAIL" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENTModel.HOADON" Width="1.5" PointX="7.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENTModel.KHACHHANG" Width="1.5" PointX="2.875" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENTModel.LOAIPHONG" Width="1.5" PointX="12.125" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENTModel.LOAITV" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENTModel.NGUOIDUNG" Width="1.5" PointX="0.625" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENTModel.NHANVIEN" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENTModel.PHIEUTHUE" Width="1.5" PointX="5.125" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HOTELMANAGEMENTModel.PHONG" Width="1.5" PointX="9.875" PointY="10.25" IsExpanded="true" />
+        <AssociationConnector Association="HOTELMANAGEMENTModel.FK_MAPHIEU_CTPT_PT" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENTModel.FK_MAPHONG" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENTModel.FK_MAKH_EMAIL" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENTModel.FK_MAPHIEU_HOADON" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENTModel.FK_MAKH" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENTModel.FK_MALTV_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENTModel.FK_TAIKHOANKH_TAIKHOAN" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENTModel.FK_MALOAI" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENTModel.FK_TAIKHOANNV_TAIKHOAN" ManuallyRouted="false" />
+        <AssociationConnector Association="HOTELMANAGEMENTModel.FK_MANV" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

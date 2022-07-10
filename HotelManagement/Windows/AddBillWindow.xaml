@@ -1,0 +1,230 @@
+﻿<Window x:Class="HotelManagement.Windows.AddBillWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelManagement.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Thêm hóa đơn" Height="580" Width="430"
+        Name="AddBill"           
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent" MouseDown="AddBill_MouseDown"
+        DataContext="{StaticResource AddBillVM}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10" Grid.RowSpan="3" 
+                Background="Beige">
+            <!--<Border.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="1,0">
+                    <GradientStop Color="#FF140B6A" Offset="0"/>
+                    <GradientStop Color="#FFC499FD" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>-->
+        </Border>
+
+        <Border VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    BorderThickness="0 0 0 3"
+                    BorderBrush="Black"
+                    Width="auto">
+            <TextBlock Text="BOOKING"
+                            FontWeight="SemiBold"
+                           FontSize="26"
+                           Margin="0 0 0 5"></TextBlock>
+        </Border>
+
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal" 
+                            Height="30"
+                            Margin="0 10 0 10">
+                <Grid Width="120" 
+                          Margin="0 0 10 0">
+                    <TextBlock Text="Mã phòng" 
+                               FontSize="14"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center"
+                              FontWeight="Medium" Margin="0,0,-4,0"></TextBlock>
+                </Grid>
+                <TextBox x:Name="txtMaP"
+                         Margin="10 0 0 0"
+                    BorderThickness="1"
+                             Width="260"
+                             VerticalContentAlignment="Center"
+                             Text="{Binding MAP}" BorderBrush="#89363434">
+                </TextBox>
+            </StackPanel>
+            <Label Name="MaP_label"
+                           Margin="140,-10,30,0"
+                           FontSize="10"
+                           Foreground="Red"
+                           FontStyle="Italic"
+                           Content="{Binding lbMAP}">
+            </Label>
+            <StackPanel Orientation="Horizontal" 
+                            Height="30"
+                            Margin="0 10 0 10">
+                <Grid Width="120" 
+                          Margin="0 0 10 0">
+                    <TextBlock Text="Mã khách hàng" 
+                               FontSize="14"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center"
+                              FontWeight="Medium" Margin="0,0,-4,0"></TextBlock>
+                </Grid>
+                <TextBox x:Name="txtMaKH" 
+                         Text="{Binding MAKH}"
+                         Margin="10 0 0 0"
+                         BorderThickness="1"
+                             Width="260"
+                             VerticalContentAlignment="Center" BorderBrush="#89363434"></TextBox>
+            </StackPanel>
+            <Label Name="TenKH_label"
+                           Margin="140,-10,30,0"
+                           FontSize="10"
+                           Foreground="Red"
+                           FontStyle="Italic"
+                           Content="{Binding lbMaKH}">
+            </Label>
+            <StackPanel Orientation="Horizontal" 
+                            Height="30"
+                            Margin="0 10 0 10">
+                <Grid Width="120" 
+                          Margin="0 0 10 0">
+                    <TextBlock Text="Mã phiếu thuê" 
+                               FontSize="14"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center"
+                              FontWeight="Medium" Margin="0,0,-4,0"></TextBlock>
+                </Grid>
+                <TextBox BorderThickness="1"
+                         Text="{Binding MaPT}"
+                         Margin="10 0 0 0"
+                         x:Name="txtMaPT"
+                             Width="260"
+                             VerticalContentAlignment="Center" BorderBrush="#89363434"></TextBox>
+            </StackPanel>
+            <Label Name="MaPT_label"
+                           Margin="140,-10,30,0"
+                           FontSize="10"
+                           Foreground="Red"
+                           FontStyle="Italic"
+                           Content="{Binding lbMaPT}"></Label>
+            <StackPanel Orientation="Horizontal" 
+                            Height="30"
+                            Margin="0 10 0 10">
+                <Grid Width="120" 
+                          Margin="0 0 10 0">
+                    <TextBlock Text="Loại thuê" 
+                               FontSize="14"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center"
+                              FontWeight="Medium" Margin="0,0,-4,0"></TextBlock>
+                </Grid>
+
+                <ComboBox Name="cbLoaiThue"
+                    materialDesign:ComboBoxAssist.ClassicMode="{Binding ElementName=ClassicModeCheckBox, Path=IsChecked}"
+                          Width="auto"
+                          Margin="10 0 0 0">
+                    <ComboBoxItem IsSelected="True">Theo ngày</ComboBoxItem>
+                    <ComboBoxItem>Theo đêm</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" 
+                            Margin="0 10 0 10">
+                <Grid Width="120" 
+                          Margin="0 0 10 0">
+                    <TextBlock Text="Ngày nhận" 
+                               FontSize="14"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center"
+                              FontWeight="Medium" Margin="0,0,-4,0"></TextBlock>
+                </Grid>
+                <DatePicker Width="100"
+                            x:Name="txtTuNgay"
+                            Margin="10 0 0 0"
+                            materialDesign:HintAssist.Hint="Pick Date"
+                            SelectedDate="{Binding TUNGAY}"
+                            Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                            Margin="0 10 0 10">
+                <Grid Width="120" 
+                          Margin="0 0 10 0">
+                    <TextBlock Text="Ngày trả" 
+                               FontSize="14"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center"
+                              FontWeight="Medium" Margin="0,0,-4,0"></TextBlock>
+                </Grid>
+                <DatePicker Width="100"
+                            x:Name="txtDenNgay"
+                            Margin="10 0 0 0"
+                            materialDesign:HintAssist.Hint="Pick Date"
+                            SelectedDate="{Binding DENNGAY}"
+                            Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" 
+                            Margin="0 10 0 10">
+                <Grid Width="120" 
+                          Margin="0 0 10 0">
+                    <TextBlock Text="Ngày đặt" 
+                               FontSize="14"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Center"
+                              FontWeight="Medium" Margin="0,0,-4,0"></TextBlock>
+                </Grid>
+                <DatePicker x:Name="txtNgayDat"
+                            Width="100"
+                            Margin="10 0 0 0"
+                            materialDesign:HintAssist.Hint="Pick Date"
+                            SelectedDate="{Binding NGAYDAT}"
+                            Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button x:Name="CancelBooking_btn"
+                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="105"
+                        Margin="0 0 5 0"
+                        ToolTip="Cancel"
+                        Content="Cancel"
+                        Background="#FF31577E"
+                        Foreground="White"
+                        BorderThickness="0"
+                        FontWeight="SemiBold" Click="CancelBooking_btn_Click">
+            </Button>
+            <Button x:Name="booking_btn" Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="105"
+                        Margin="5 0 0 0"
+                        ToolTip="Booking"
+                        Content="Booking"
+                        Background="#FF31577E"
+                        Foreground="White"
+                        BorderThickness="0"
+                        FontWeight="SemiBold" Click="booking_btn_Click"/>
+            <Button Style="{StaticResource MaterialDesignRaisedLightButton}"
+                Width="105"
+                    x:Name="btnPrint"
+                Margin="10 0 0 0"
+                ToolTip="Print"
+                Content="Print"
+                Background="#FF31577E"
+                Foreground="White"
+                BorderThickness="0" Click="btnPrint_Click"
+                />
+            
+        </StackPanel>
+    </Grid>
+</Window>
