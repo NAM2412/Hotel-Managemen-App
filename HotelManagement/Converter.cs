@@ -20,11 +20,6 @@ namespace HotelManagement
             get { if (instance == null) instance = new Converter(); return Converter.instance; }
             private set { Converter.instance = value; }
         }
-        private Converter()
-        {
-
-        }
-
         public Byte[] ConvertImageToBytes(string imageFileName)
         {
             FileStream fs = new FileStream(imageFileName, FileMode.Open, FileAccess.Read);
